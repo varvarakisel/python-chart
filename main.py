@@ -1,5 +1,5 @@
-from networking import get_chart_from_lastfm
-from models import User
+from net.net import get_chart_from_lastfm
+from db.models import User
 
 
 users = ['varvara_kisel']
