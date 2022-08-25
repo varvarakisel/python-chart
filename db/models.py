@@ -1,11 +1,12 @@
 from peewee import Model, CharField, IntegerField, ForeignKeyField, DateField, FloatField
 
-from database import db
+from db.database import db
 
 
 class User(Model):
     lastfm_login = CharField(unique=True)
-    vk_url = CharField()
+    tg_url = CharField()
+
     class Meta:
         database = db
 
@@ -13,6 +14,7 @@ class User(Model):
 class Track(Model):
     name = CharField()
     url = CharField()
+
     class Meta:
         database = db
 
@@ -21,6 +23,7 @@ class Chart(Model):
     track_id = ForeignKeyField(Track, backref='charts')
     final_position = IntegerField()
     date = DateField()
+
     class Meta:
         database = db
 
@@ -31,5 +34,6 @@ class UserTrack(Model):
     date = DateField()
     playcount = IntegerField()
     rate = FloatField()
+
     class Meta:
         database = db

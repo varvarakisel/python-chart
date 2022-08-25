@@ -1,4 +1,5 @@
 from peewee import PostgresqlDatabase
 
 
-db = PostgresqlDatabase('chart', user='user', password='123#!', host='localhost', port=5432)
+db = PostgresqlDatabase('chart', user='postgres',
+                        password='postgres', host='localhost', port=5432)
